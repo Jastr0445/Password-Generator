@@ -66,7 +66,7 @@ const hasUpperCasedCharacters = confirm(
   'Click OK to confirm including lowercase characters.'
 );
 
-// Variable to store boolean regarding inclusion of numericChars
+// const to store boolean regarding inclusion of numericChars
 const hasNumericCharacters = confirm(
   'Click OK to confirm including numeric characters.'
 );
