@@ -150,7 +150,7 @@ for (var i = 0; i < guaranteedCharacters.length; i++) {
   result[i] = guaranteedCharacters[i];
 }
 
-// Transform the result into a string and pass into writePassword
+//  this return statement Transform the result into a string and pass into writePassword
 return result.join('');
 }
 
