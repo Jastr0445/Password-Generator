@@ -58,7 +58,7 @@ function getPasswordOptions() {
   );
 
   // Variable to store boolean regarding the inclusion of numeric characters
-  var haveNumChars = confirm(
+  var haveNumericChars = confirm(
     'Click OK to confirm including numeric characters.'
   );
 
@@ -76,7 +76,7 @@ function getPasswordOptions() {
  
    if (
     haveSpecChars === false &&
-    haveNumChars === false &&
+    haveNumericChars === false &&
     haveLowerCasedChars === false &&
     haveUpperCasedChars === false
   ) {
@@ -87,9 +87,9 @@ function getPasswordOptions() {
   var passwordOptions ={
    haveUpperCasedChars: haveUpperCasedChars,
    haveLowerCasedChars: haveLowerCasedChars,
-   haveNumChars: haveNumChars,
+   haveNumChars: haveNumericChars,
    haveSpecChars: haveSpecChars
-
+   
   };
 
   return passwordOptions;
@@ -133,9 +133,9 @@ function generatePassword() {
 
   // Conditional statement that adds array of lowercase characters into array of possible characters based on user input
   // Push new random lower-cased character to guaranteedCharacters
-  if (options.haveNumChars) {
-    possibleChars = possibleChars.concat(haveNumChars);
-    guaranteedChars.push(getRandom(haveNumChars));
+  if (options.haveNumericChars) {
+    possibleChars = possibleChars.concat(haveNumericChars);
+    guaranteedChars.push(getRandom(haveNumericChars));
   }
 
   // Conditional statement that adds array of uppercase characters into array of possible characters based on user input
@@ -155,7 +155,7 @@ function generatePassword() {
   // Mix in at least one of each guaranteed character in the result
   for (var i = 0; i < guaranteedChars.length; i++) {
     result[i] = guaranteedChars[i];
-  }
+  }  
 
   // Transform the result into a string and pass into writePassword
   return result.join('');
