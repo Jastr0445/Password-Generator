@@ -30,21 +30,21 @@ var numChars = ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9'];
 function getPasswordOptions() {
   // Var to store password length from user input //
   var length = parseInt(
-    prompt('How many chars would you like your password to contain?')
+    prompt('How many chars would you like to have in your password?')
   );
 
   if (isNaN(length) === true) {
-    alert('Password length must be provided as a number!');
+    alert('Password length must be provided a number!');
     return;
   }
 
   if (length < 8) {
-    alert('Password length must be at least 8 characters!');
+    alert('Password must have at least 8 chars!');
     return;
   }
 
   if (length > 128) {
-    alert('Password length must less than 129 characters!');
+    alert('Password must have less than 129 chars!');
     return;
   }
 
@@ -62,12 +62,12 @@ var haveNumericChars = confirm(
   'Click OK to confirm including numeric chars.'
 );
 
-  // Var storing boolean regarding the inclusion of specchars //
+  // Var storing boolean regarding the inclusion of specChars //
   var haveSpecChars = confirm(
     'Click OK to confirm including special chars.'
   );
 
-  // Conditional statement to check if user does not include any types of characters. Password generator ends if all four vars evaluate to boolean value/false //
+  // Conditional statement to see if user doesn't have any character types. Password-generator ends if all four vars evaluate to boolean value/false //
  
     if (
     haveUpperCasedChars === false &&
@@ -78,7 +78,7 @@ var haveNumericChars = confirm(
     alert('Must select at least one character type');
     return;
   }
-  // stores data for password options
+  // stores data for password options //
   var passwordOptions ={
    haveUpperCasedChars: haveUpperCasedChars,
    haveLowerCasedChars: haveLowerCasedChars,
