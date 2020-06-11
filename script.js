@@ -1,7 +1,7 @@
-// Assignment Code from Gitlab
+// Assignment Code from Gitlab //
 const generateBtn = document.querySelector("#generate");
 
-// Writes password to the #password input
+// Writes password to the #password input //
 function writePassword() {
   const password =  generatePassword();
   const passwordText = document.querySelector("#password");
@@ -15,7 +15,7 @@ function copyToClipboard() {
 function generatePassword(){
   
 };
-// Add event listener to generate button
+// Add event listener to generate button //
 generateBtn.addEventListener("click", writePassword);
 
 var upperCasedChars = ["A","B","C","D","E","F","G","H","I","J","K","L","M","N","O","P","Q","R","S","T","U","V","W","X","Y","Z"];
@@ -26,9 +26,9 @@ var specChars = ['!','@','#','$','%','^','&','*','(',')','_','+','=','|',];
 
 var numChars = ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9'];
 
-// Function to prompt user for password options
+// Function to prompt user for password options //
 function getPasswordOptions() {
-  // Variable to store length of password from user input
+  // Var to store password length from user input //
   var length = parseInt(
     prompt('How many chars would you like your password to contain?')
   );
@@ -64,7 +64,7 @@ function getPasswordOptions() {
     'Click OK to confirm including uppercase characters.'
   );
 
-  // Conditional statement to check if user does not include any types of characters. Password generator ends if all four variables evaluate to boolean value/false
+  // Conditional statement to check if user does not include any types of characters. Password generator ends if all four vars evaluate to boolean value/false //
  
    if (
     haveSpecChars === false &&
@@ -75,7 +75,7 @@ function getPasswordOptions() {
     alert('Must select at least one character type');
     return;
   }
-
+  
   var passwordOptions ={
    haveUpperCasedChars: haveUpperCasedChars,
    haveLowerCasedChars: haveLowerCasedChars,
@@ -87,7 +87,7 @@ function getPasswordOptions() {
   return passwordOptions;
 }
 
-// Function for getting a random element from an array
+// Function for getting random element from array // 
 function getRandom(arr) {
   var randomIndex = Math.floor(Math.random() * arr.length);
   var randomElement = arr[randomIndex];
@@ -95,17 +95,15 @@ function getRandom(arr) {
   return randomElement;
 }
 
-// Function to generate password with user input
+// Function to generate password with user input //
 function generatePassword() {
   var options = getPasswordOptions();
-  // Variable to store password options as it's being concatenated
+  // Var to store password options as it's being concatenated // 
   var result = [];
 
-  // Array to store types of characters to include in password
+  // Array to store char types to include in password //
   var guaranteedChars = [];
   
-
-  // var/array to contain one of each type of chosen character to ensure each will be used
  
   var possibleChars = []
 
