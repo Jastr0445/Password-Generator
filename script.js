@@ -102,7 +102,7 @@ function getRandom(arr) {
 
 // Function to generate password with user input //
 function generatePassword() {
-  var options = getPasswordOptions();
+  var userOptions = getPasswordOptions();
   // Var to store password options as it's being concatenated // 
   var result = [];
 
@@ -112,37 +112,37 @@ function generatePassword() {
  // stores data for possible characters
   var possibleChars = []
 
-  if (options.haveUpperCasedChars) {
+  if (userOptions.haveUpperCasedChars) {
     possibleChars = possibleChars.concat(upperCasedChars);
     guaranteedChars.push(getRandom(upperCasedChars));
   }
 
-  if (options.lowerCasedChars) {
+  if (userOptions.lowerCasedChars) {
     possibleChars = possibleChars.concat(lowerCasedChars);
     guaranteedChars.push(getRandom(lowerCasedChars));
   }
 
-  if (options.haveNumericChars) {
+  if (userOptions.haveNumericChars) {
     possibleChars = possibleChars.concat(haveNumericChars);
     guaranteedChars.push(getRandom(haveNumericChars));
   }
 
-  if (options.haveSpecChars) {
+  if (userOptions.haveSpecChars) {
     possibleChars = possibleChars.concat(specChars);
     guaranteedChars.push(getRandom(specChars));
-  }
-
-  // For loop to iterate password length from options object, selecting random content from array of possible chars and concatenating/combining arrays those chars into result var
-  for (var i = 0; i < options.length; i++) {
-    var possibleChar = getRandom(possibleChars);
-
-    result.push(possibleChar);
   }
 
   for (var i = 0; i < guaranteedChars.length; i++) {
     result[i] = guaranteedChars[i];
   }  
 
+  // For loop to iterate password length from options object, selecting random content from array of possible chars and concatenating/combining arrays those chars into result var
+  for (var i = 0; i < userOptions.length; i++) {
+    var possibleChar = getRandom(possibleChars);
+
+    result.push(possibleChar);
+  }
+
   // Transform the result into a string and pass into the writePassword function
-  return result.join('');  
+  return result.join('');
 }
