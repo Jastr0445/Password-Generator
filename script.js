@@ -7,11 +7,10 @@ function writePassword() {
   const passwordText = document.querySelector("#password");
   
   passwordText.value = password;
-
 };
 
 function copyToClipboard() {
-
+  
 };
 function generatePassword(){
   
@@ -65,7 +64,7 @@ function getPasswordOptions() {
     'Click OK to confirm including uppercase characters.'
   );
 
-  // Conditional statement to check if user does not include any types of characters. Password generator ends if all four variables evaluate to false
+  // Conditional statement to check if user does not include any types of characters. Password generator ends if all four variables evaluate to boolean value/false
  
    if (
     haveSpecChars === false &&
@@ -99,7 +98,7 @@ function getRandom(arr) {
 // Function to generate password with user input
 function generatePassword() {
   var options = getPasswordOptions();
-  // Variable to store password as it's being concatenated
+  // Variable to store password options as it's being concatenated
   var result = [];
 
   // Array to store types of characters to include in password
@@ -110,35 +109,27 @@ function generatePassword() {
  
   var possibleChars = []
 
-  // Conditional statement that adds array of special characters into array of possible characters based on user input
-  // Push new random special character to guaranteedCharacters
   if (options.haveUpperCasedChars) {
     possibleChars = possibleChars.concat(upperCasedChars);
     guaranteedChars.push(getRandom(upperCasedChars));
   }
 
-  // Conditional statement that adds array of numeric characters into array of possible characters based on user input
-  // Push new random special character to guaranteedCharacters
   if (options.lowerCasedChars) {
     possibleChars = possibleChars.concat(lowerCasedChars);
     guaranteedChars.push(getRandom(lowerCasedChars));
   }
 
-  // Conditional statement that adds array of lowercase characters into array of possible characters based on user input
-  // Push new random lower-cased character to guaranteedCharacters
   if (options.haveNumericChars) {
     possibleChars = possibleChars.concat(haveNumericChars);
     guaranteedChars.push(getRandom(haveNumericChars));
   }
 
-  // Conditional statement that adds array of uppercase characters into array of possible characters based on user input
-  // Push new random upper-cased character to guaranteedCharacters
   if (options.haveSpecChars) {
     possibleChars = possibleChars.concat(specChars);
     guaranteedChars.push(getRandom(specChars));
   }
 
-  // For loop to iterate over the password length from the options object, selecting random indices from the array of possible characters and concatenating those characters into the result variable
+  // For loop to iterate over the password length from the options object, selecting random indices from the array of possible chars and concatenating those chars into the result var
   for (var i = 0; i < options.length; i++) {
     var possibleChar = getRandom(possibleChars);
 
@@ -149,6 +140,6 @@ function generatePassword() {
     result[i] = guaranteedChars[i];
   }  
 
-  // Transform the result into a string and pass into writePassword
+  // Transform the result into a string and pass into writePassword function
   return result.join('');
 }
