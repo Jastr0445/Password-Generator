@@ -25,9 +25,9 @@ var upperCasedChars = ["A","B","C","D","E","F","G","H","I","J","K","L","M","N","
 
 var lowerCasedChars = ["a","b","c","d","e","f","g","h","i","j","k","l","m","n","o","p","q","r","s","t","u","v","w","x","y","z"];
 
-var specChars = ['!','@','#','$','%','^','&','*','(',')','_','+','=','|',];
+var specChars = ["!","@","#","$","%","^","&","*","(",")","_","+","=","|","[","]","{","}","'",";",":",];
 
-var numChars = ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9'];
+var numChars = ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9"];
 
 // Function to prompt user for password options //
 function getPasswordOptions() {
@@ -83,7 +83,7 @@ var haveNumericChars = confirm(
     return;
   }
 
-  // stores data for password options made by client/user //
+  // stores data for password options //
   var userPasswordOptions ={
    haveUpperCasedChars: haveUpperCasedChars,
    haveLowerCasedChars: haveLowerCasedChars,
