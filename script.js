@@ -84,7 +84,7 @@ var haveNumericChars = confirm(
   }
 
   // stores data for password options //
-  var userPasswordOptions ={
+  var userOptions ={
    haveUpperCasedChars: haveUpperCasedChars,
    haveLowerCasedChars: haveLowerCasedChars,
    haveNumChars: haveNumericChars,
@@ -92,7 +92,7 @@ var haveNumericChars = confirm(
    
   };
 
-  return userPasswordOptions;
+  return userOptions;
 }
 
 // Function for getting random element from array // 
@@ -140,12 +140,13 @@ function generatePassword() {
   }  
 
   // For loop to iterate password length from options object, selecting random content from array of possible chars and concatenating/combining arrays those chars into result var
-  for (var i = 0; i < userOptions.length; i++) {
+  for (var i = 0; i < userOptions.length; i++) {}
     var possibleChar = getRandom(possibleChars);
+    for (var i = 0; i < 10; i++) {
 
     result.push(possibleChar);
   }
 
   // Transform the result into a string and pass into the writePassword function
   return result.join('');
-}
+  }
