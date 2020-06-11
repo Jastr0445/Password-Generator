@@ -130,7 +130,7 @@ function generatePassword() {
     guaranteedChars.push(getRandom(specChars));
   }
 
-  // For loop to iterate over the password length from the options object, selecting random indices from the array of possible chars and concatenating those chars into the result var
+  // For loop to iterate over the password length from options object, selecting random indices from array of possible chars and concatenating those chars into result var
   for (var i = 0; i < options.length; i++) {
     var possibleChar = getRandom(possibleChars);
 
