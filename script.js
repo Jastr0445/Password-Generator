@@ -8,7 +8,7 @@ function writePassword() {
   
   passwordText.value = password;
 };
-
+// prints password on clipboard //
 function copyToClipboard() {
   
 };
@@ -48,20 +48,23 @@ function getPasswordOptions() {
     return;
   }
 
+  // Var to store boolean regarding inclusion of uppercasedchars //
+var haveUpperCasedChars = confirm(
+  'Click OK to confirm including uppercase chars.'
+ );
+
+// Var to store boolean regarding inclusion of lowercasedchars //
+var haveLowerCasedChars = confirm(
+  'Click OK to confirm including lowercase chars.'
+);
+// var storing boolean regarding  inclusion of numericChars //
+var haveNumericChars = confirm(
+  'Click OK to confirm including numeric chars.'
+);
+
+  // Var storing boolean regarding the inclusion of specchars //
   var haveSpecChars = confirm(
-    'Click OK to confirm including special characters.'
-  );
-
-  var haveNumericChars = confirm(
-    'Click OK to confirm including numeric characters.'
-  );
-
-  var haveLowerCasedChars = confirm(
-    'Click OK to confirm including lowercase characters.'
-  );
-
-  var haveUpperCasedChars = confirm(
-    'Click OK to confirm including uppercase characters.'
+    'Click OK to confirm including special chars.'
   );
 
   // Conditional statement to check if user does not include any types of characters. Password generator ends if all four vars evaluate to boolean value/false //
@@ -75,7 +78,7 @@ function getPasswordOptions() {
     alert('Must select at least one character type');
     return;
   }
-  
+  // stores data for password options
   var passwordOptions ={
    haveUpperCasedChars: haveUpperCasedChars,
    haveLowerCasedChars: haveLowerCasedChars,
@@ -104,7 +107,7 @@ function generatePassword() {
   // Array to store char types to include in password //
   var guaranteedChars = [];
   
- 
+ // stores data for possible characters
   var possibleChars = []
 
   if (options.haveUpperCasedChars) {
@@ -138,6 +141,6 @@ function generatePassword() {
     result[i] = guaranteedChars[i];
   }  
 
-  // Transform the result into a string and pass into writePassword function
+  // Transform the result into a string and pass into the writePassword function
   return result.join('');
 }
