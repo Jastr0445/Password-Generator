@@ -69,11 +69,11 @@ var haveNumericChars = confirm(
 
   // Conditional statement to check if user does not include any types of characters. Password generator ends if all four vars evaluate to boolean value/false //
  
-   if (
-    haveSpecChars === false &&
-    haveNumericChars === false &&
+    if (
+    haveUpperCasedChars === false &&
     haveLowerCasedChars === false &&
-    haveUpperCasedChars === false
+    haveNumericChars === false &&
+    haveSpecChars === false
   ) {
     alert('Must select at least one character type');
     return;
