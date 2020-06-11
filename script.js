@@ -16,7 +16,7 @@ function copyToClipboard() {
 function generatePassword(){
   
 };
-// Add event listener to generate buttosn
+// Add event listener to generate button
 generateBtn.addEventListener("click", writePassword);
 
 var upperCasedChars = ["A","B","C","D","E","F","G","H","I","J","K","L","M","N","O","P","Q","R","S","T","U","V","W","X","Y","Z"];
@@ -34,40 +34,33 @@ function getPasswordOptions() {
     prompt('How many chars would you like your password to contain?')
   );
 
-  // Conditional statement to check if password length is a number. Prompts end if this evaluates false
   if (isNaN(length) === true) {
     alert('Password length must be provided as a number!');
     return;
   }
 
-  // Conditional statement to check if password length is at least 8 characters long. Prompts end if this evaluates false
   if (length < 8) {
     alert('Password length must be at least 8 characters!');
     return;
   }
 
-  // Conditional statement to check if password length is less than 128 characters long. Prompts end if this evaluates false
   if (length > 128) {
     alert('Password length must less than 129 characters!');
     return;
   }
 
-  // Variable to store boolean regarding the inclusion of special characters
   var haveSpecChars = confirm(
     'Click OK to confirm including special characters.'
   );
 
-  // Variable to store boolean regarding the inclusion of numeric characters
   var haveNumericChars = confirm(
     'Click OK to confirm including numeric characters.'
   );
 
-  // Variable to store boolean regarding the inclusion of lowercase characters
   var haveLowerCasedChars = confirm(
     'Click OK to confirm including lowercase characters.'
   );
 
-  // Variable to store boolean regarding the inclusion of uppercase characters
   var haveUpperCasedChars = confirm(
     'Click OK to confirm including uppercase characters.'
   );
@@ -113,7 +106,7 @@ function generatePassword() {
   var guaranteedChars = [];
   
 
-  // Array to contain one of each type of chosen character to ensure each will be used
+  // var/array to contain one of each type of chosen character to ensure each will be used
  
   var possibleChars = []
 
@@ -152,7 +145,6 @@ function generatePassword() {
     result.push(possibleChar);
   }
 
-  // Mix in at least one of each guaranteed character in the result
   for (var i = 0; i < guaranteedChars.length; i++) {
     result[i] = guaranteedChars[i];
   }  
