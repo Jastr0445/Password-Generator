@@ -38,13 +38,13 @@ function getPasswordOptions() {
     return;
   }
 
-  if (length < 8) {
-    alert('Password must have at least 8 chars!');
+  if (length > 128) {
+    alert('Password must have less than 129 chars!');
     return;
   }
 
-  if (length > 128) {
-    alert('Password must have less than 129 chars!');
+  if (length < 8) {
+    alert('Password must have at least 8 chars!');
     return;
   }
 
@@ -67,9 +67,10 @@ var haveNumericChars = confirm(
     'Click OK to confirm including special chars.'
   );
 
-  // Conditional statement to see if user doesn't have any character types. Password-generator ends if all four vars evaluate to boolean value/false //
+
+// Conditional statement to see if user doesn't have any character types. Password-generator ends if all four vars evaluate to boolean value/false //
   // comparison operators //
-    if (
+  if (
     haveUpperCasedChars === false &&
     haveLowerCasedChars === false &&
     haveNumericChars === false &&
@@ -78,6 +79,7 @@ var haveNumericChars = confirm(
     alert('Must select at least one character type');
     return;
   }
+
   // stores data for password options //
   var passwordOptions ={
    haveUpperCasedChars: haveUpperCasedChars,
@@ -142,5 +144,5 @@ function generatePassword() {
   }  
 
   // Transform the result into a string and pass into the writePassword function
-  return result.join('');
+  return result.join('');  
 }
