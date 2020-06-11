@@ -32,7 +32,7 @@ function getPasswordOptions() {
   var length = parseInt(
     prompt('How many chars would you like to have in your password?')
   );
-
+  // comparison operator //
   if (isNaN(length) === true) {
     alert('Password length must be provided a number!');
     return;
@@ -48,27 +48,27 @@ function getPasswordOptions() {
     return;
   }
 
-  // Var to store boolean regarding inclusion of uppercasedchars //
+  // Var to store boolean value regarding inclusion of uppercasedchars //
 var haveUpperCasedChars = confirm(
   'Click OK to confirm including uppercase chars.'
  );
 
-// Var to store boolean regarding inclusion of lowercasedchars //
+// Var to store boolean value regarding inclusion of lowercasedchars //
 var haveLowerCasedChars = confirm(
   'Click OK to confirm including lowercase chars.'
 );
-// var storing boolean regarding  inclusion of numericChars //
+// var storing boolean value regarding  inclusion of numericChars //
 var haveNumericChars = confirm(
   'Click OK to confirm including numeric chars.'
 );
 
-  // Var storing boolean regarding the inclusion of specChars //
+  // Var storing boolean value regarding the inclusion of specChars //
   var haveSpecChars = confirm(
     'Click OK to confirm including special chars.'
   );
 
   // Conditional statement to see if user doesn't have any character types. Password-generator ends if all four vars evaluate to boolean value/false //
- 
+  // comparison operators //
     if (
     haveUpperCasedChars === false &&
     haveLowerCasedChars === false &&
@@ -130,7 +130,7 @@ function generatePassword() {
     guaranteedChars.push(getRandom(specChars));
   }
 
-  // For loop to iterate over the password length from options object, selecting random indices from array of possible chars and concatenating those chars into result var
+  // For loop to iterate password length from options object, selecting random content from array of possible chars and concatenating/combining arrays those chars into result var
   for (var i = 0; i < options.length; i++) {
     var possibleChar = getRandom(possibleChars);
 
