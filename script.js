@@ -81,7 +81,7 @@ var haveNumericChars = confirm(
   }
 
   // stores data for password options //
-  var passwordOptions ={
+  var userPasswordOptions ={
    haveUpperCasedChars: haveUpperCasedChars,
    haveLowerCasedChars: haveLowerCasedChars,
    haveNumChars: haveNumericChars,
@@ -89,14 +89,14 @@ var haveNumericChars = confirm(
    
   };
 
-  return passwordOptions;
+  return userPasswordOptions;
 }
 
 // Function for getting random element from array // 
 function getRandom(arr) {
   var randomIndex = Math.floor(Math.random() * arr.length);
   var randomElement = arr[randomIndex];
-
+  
   return randomElement;
 }
 
