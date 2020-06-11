@@ -80,7 +80,7 @@ var haveNumericChars = confirm(
     return;
   }
 
-  // stores data for password options //
+  // stores data for password options made by client/user //
   var userPasswordOptions ={
    haveUpperCasedChars: haveUpperCasedChars,
    haveLowerCasedChars: haveLowerCasedChars,
